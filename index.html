@@ -742,7 +742,7 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
     const body = [document.querySelector('main'), document.querySelector('.foot')];
     let lastY = scrollY, lastT = performance.now(), vel = 0, wasBottom = false, busy = false;
     // damped spring: one slow swell, a soft settle, and it always comes to rest at zero
-    const DUR = 2000;
+    const DUR = 1650;
     const bounce = amt => {
       if (busy) return; busy = true;
       const frames = [], N = 80, w = 2 * Math.PI * 1.2, z = 1.4;
@@ -757,12 +757,12 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
       const now = performance.now(), y = scrollY;
       vel = (y - lastY) / Math.max(1, now - lastT); lastY = y; lastT = now;
       const atBottom = y >= document.documentElement.scrollHeight - innerHeight - 2;
-      if (atBottom && !wasBottom && vel > 1.5) bounce(clamp(vel * 13, 26, 62));
+      if (atBottom && !wasBottom && vel > 1.5) bounce(clamp(vel * 18, 40, 90));
       wasBottom = atBottom;
     }, {passive:true});
     addEventListener('wheel', e => {
       const atBottom = scrollY >= document.documentElement.scrollHeight - innerHeight - 2;
-      if (atBottom && e.deltaY > 30) bounce(clamp(e.deltaY * .16, 14, 34));
+      if (atBottom && e.deltaY > 30) bounce(clamp(e.deltaY * .22, 20, 48));
     }, {passive:true});
   }
 })();
