@@ -246,7 +246,7 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
 .credits .directed dd{font-size:clamp(30px,3.4vw,52px);font-weight:900;font-variation-settings:"wdth" 88;letter-spacing:-.01em}
 .contact{margin:clamp(90px,12vw,160px) auto 0;max-width:1200px}
 .contact .big{display:inline-block;text-decoration:none;font:900 clamp(40px,8.4vw,150px)/.9 var(--display);font-variation-settings:"wdth" var(--cw,80);letter-spacing:-.015em;line-height:.98;transition:font-variation-settings .6s var(--ease);background:linear-gradient(100deg,var(--ink) 30%,var(--cobalt) 60%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
-.contact .big:hover{--cw:115}
+.contact .big:hover{--cw:86}
 .contact .addr{display:block;margin-top:18px;font:500 clamp(16px,1.4vw,20px) var(--display);font-variation-settings:"wdth" 90;color:var(--ink-soft)}
 .contact .links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
 .foot{padding:40px var(--gutter) 34px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:500 13.5px/1.5 var(--display);font-variation-settings:"wdth" 85;color:var(--ink-faint);border-top:1px solid var(--line);margin-top:80px}
@@ -742,12 +742,12 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
     const body = [document.querySelector('main'), document.querySelector('.foot')];
     let lastY = scrollY, lastT = performance.now(), vel = 0, wasBottom = false, busy = false;
     // damped spring: one slow swell, a soft settle, and it always comes to rest at zero
-    const DUR = 1900;
+    const DUR = 2000;
     const bounce = amt => {
       if (busy) return; busy = true;
-      const frames = [], N = 72, w = 2 * Math.PI * 1.15, z = 2.2;
+      const frames = [], N = 80, w = 2 * Math.PI * 1.2, z = 1.4;
       for (let i = 0; i <= N; i++) {
-        const t = i / N, y = -amt * Math.exp(-z * t) * Math.sin(w * t) * Math.pow(1 - t, 1.5) / 0.5;
+        const t = i / N, y = -amt * Math.exp(-z * t) * Math.sin(w * t) * (1 - t) / 0.628;
         frames.push({transform:`translate3d(0,${y.toFixed(2)}px,0)`});
       }
       body.forEach(el => el.animate(frames, {duration:DUR, easing:'linear'}));
@@ -757,12 +757,12 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
       const now = performance.now(), y = scrollY;
       vel = (y - lastY) / Math.max(1, now - lastT); lastY = y; lastT = now;
       const atBottom = y >= document.documentElement.scrollHeight - innerHeight - 2;
-      if (atBottom && !wasBottom && vel > 1.5) bounce(clamp(vel * 10, 18, 46));
+      if (atBottom && !wasBottom && vel > 1.5) bounce(clamp(vel * 13, 26, 62));
       wasBottom = atBottom;
     }, {passive:true});
     addEventListener('wheel', e => {
       const atBottom = scrollY >= document.documentElement.scrollHeight - innerHeight - 2;
-      if (atBottom && e.deltaY > 30) bounce(clamp(e.deltaY * .12, 10, 26));
+      if (atBottom && e.deltaY > 30) bounce(clamp(e.deltaY * .16, 14, 34));
     }, {passive:true});
   }
 })();
