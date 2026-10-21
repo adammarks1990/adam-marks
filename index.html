@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adam Marks</title>
+<meta name="description" content="Adam Marks: performer, producer, studio co-founder. A portfolio for the Creative Director role, MasterClass Certificates.">
+<meta property="og:title" content="Adam Marks">
+<meta property="og:description" content="Performer since five. Producer. Studio co-founder. Twelve years building the teams behind the work.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315112B'/%3E%3Cpath d='M14 50 L26 14 L38 50 M19 36 H33 M38 50 V14 L45 30 L52 14 V50' fill='none' stroke='%23FF6FAE' stroke-width='4.5' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wdth,wght@0,50..150,100..900;1,50..150,100..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --bg:#ECE9F5; --bg-2:#E1DCF0; --bg-3:#D6CFEA;
+  --ink:#1E1840; --ink-soft:#4F4876; --ink-faint:#8A83AE;
+  --cobalt:#2F45E8; --rose:#D42C74; --glow:#9EAEFF;
+  --line:rgba(30,24,64,.16);
+  --veil:rgba(236,233,245,.0);
+  --grain-opacity:.07; --grain-blend:multiply;
+  --shadow:0 30px 80px -30px rgba(30,24,64,.35);
+  --display:"Anybody", "Arial Narrow", system-ui, sans-serif;
+  --serif:"Newsreader", Georgia, serif;
+  --gutter:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15112B; --bg-2:#1D1840; --bg-3:#272052;
+    --ink:#EEEAFE; --ink-soft:#B4ADDB; --ink-faint:#7A72A8;
+    --cobalt:#8C9BFF; --rose:#FF6FAE; --glow:#4B3FD1;
+    --line:rgba(238,234,254,.14);
+    --grain-opacity:.1; --grain-blend:screen;
+    --shadow:0 30px 80px -30px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15112B; --bg-2:#1D1840; --bg-3:#272052;
+  --ink:#EEEAFE; --ink-soft:#B4ADDB; --ink-faint:#7A72A8;
+  --cobalt:#8C9BFF; --rose:#FF6FAE; --glow:#4B3FD1;
+  --line:rgba(238,234,254,.14);
+  --grain-opacity:.1; --grain-blend:screen;
+  --shadow:0 30px 80px -30px rgba(0,0,0,.7);
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:clamp(17px,1.15vw,20px);line-height:1.6;font-optical-sizing:auto;overflow-x:hidden;transition:background-color .4s var(--ease),color .4s var(--ease)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rose);outline-offset:4px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+::selection{background:var(--rose);color:var(--bg)}
+
+/* film grain over everything */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:var(--grain-opacity);mix-blend-mode:var(--grain-blend);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* ---------- top bar ---------- */
+.bar{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--gutter);pointer-events:none}
+.bar > *{pointer-events:auto}
+.mark{padding:8px 12px;border-radius:14px;border:1px solid var(--line);background:color-mix(in oklab,var(--bg) 60%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 60;font-size:22px;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark svg{width:26px;height:26px}
+.bar-right{display:flex;align-items:center;gap:14px}
+.tc{font-family:var(--display);font-variation-settings:"wdth" 75;font-weight:500;font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink-soft);padding:7px 12px;border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:color-mix(in oklab,var(--bg) 60%,transparent)}
+.tc i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--rose);margin-right:8px;vertical-align:1px;animation:rec 1.6s infinite}
+@keyframes rec{50%{opacity:.25}}
+.lights{appearance:none;border:1px solid var(--line);background:color-mix(in oklab,var(--bg) 60%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);font:500 13px/1 var(--display);font-variation-settings:"wdth" 80;padding:6px 14px 6px 6px;border-radius:999px;display:flex;align-items:center;gap:10px;cursor:pointer}
+.lights .knob{width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFF6C8,#F6C94A 60%,#B88A12);box-shadow:0 0 18px 4px rgba(246,201,74,.55);transition:all .5s var(--ease)}
+:root[data-theme="dark"] .lights .knob{background:radial-gradient(circle at 35% 35%,#6B6396,#2A2450);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lights .knob{background:radial-gradient(circle at 35% 35%,#6B6396,#2A2450);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}}
+
+/* view transition for theme change */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-new(root){z-index:999}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;padding:110px var(--gutter) 48px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);grid-template-rows:1fr auto;gap:24px 4vw;align-items:end;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(40vmax 40vmax at var(--mx,70%) var(--my,30%), color-mix(in oklab,var(--glow) 55%,transparent), transparent 70%),
+  radial-gradient(60vmax 50vmax at 0% 110%, color-mix(in oklab,var(--rose) 18%,transparent), transparent 70%);
+  transition:background .2s linear}
+.name{grid-column:1 / -1;grid-row:1;align-self:center;position:relative;margin:0;pointer-events:none;font-family:var(--display);font-weight:850;line-height:.78;letter-spacing:-.035em;font-size:clamp(84px,21vw,360px);font-variation-settings:"wdth" var(--w,140);z-index:3;user-select:none}
+.name span{display:block}
+.name .l2{padding-left:clamp(0px,12vw,240px)}
+.name .base{color:transparent;-webkit-text-stroke:1.5px color-mix(in oklab,var(--ink) 35%,transparent)}
+.name .lit{position:absolute;inset:0;color:var(--ink);
+  -webkit-mask-image:radial-gradient(circle var(--r,260px) at var(--sx,50%) var(--sy,50%),#000 0%,#000 45%,transparent 100%);
+          mask-image:radial-gradient(circle var(--r,260px) at var(--sx,50%) var(--sy,50%),#000 0%,#000 45%,transparent 100%)}
+.name .lit span{background:linear-gradient(100deg,var(--ink) 20%,var(--cobalt) 55%,var(--rose) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.portrait{grid-column:2;grid-row:1 / span 2;justify-self:end;align-self:center;width:min(30vw,420px);aspect-ratio:3/4.1;position:relative;z-index:2;transform:translate3d(0,var(--py,0px),0) rotate(2deg);will-change:transform}
+.arch{position:absolute;inset:0;border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--bg-3);box-shadow:var(--shadow)}
+.arch img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.03);transform:scale(1.12) translate3d(0,var(--ipy,0px),0)}
+.arch .mono{position:absolute;inset:0;display:none;place-items:center;font-family:var(--display);font-weight:900;font-variation-settings:"wdth" 50;font-size:clamp(90px,14vw,220px);color:var(--bg);background:linear-gradient(160deg,var(--cobalt),var(--rose));letter-spacing:-.04em}
+.portrait.nophoto .mono{display:grid}
+.portrait.nophoto img{display:none}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,color-mix(in oklab,var(--ink) 35%,transparent));mix-blend-mode:multiply;pointer-events:none}
+.ticket{position:absolute;left:-14%;bottom:9%;background:var(--rose);color:#fff;font:600 14px/1.15 var(--display);font-variation-settings:"wdth" 85;padding:12px 16px;border-radius:12px;transform:rotate(-6deg);box-shadow:var(--shadow);max-width:180px}
+.ticket small{display:block;font-weight:400;opacity:.85;margin-top:3px}
+.hero-copy{grid-column:1;grid-row:2;max-width:34em;position:relative;z-index:4}
+.hero-copy p{margin:0 0 22px;font-size:clamp(19px,1.5vw,24px);line-height:1.45;color:var(--ink-soft)}
+.hero-copy p strong{color:var(--ink);font-weight:600}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:600 16px/1 var(--display);font-variation-settings:"wdth" 90;padding:15px 22px;border-radius:999px;border:1.5px solid var(--ink);transition:transform .25s var(--ease),background .25s,color .25s}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn .play{width:0;height:0;border-left:8px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.scrollcue{position:absolute;right:var(--gutter);bottom:24px;font:500 13px var(--display);font-variation-settings:"wdth" 75;color:var(--ink-faint);writing-mode:vertical-rl;letter-spacing:.06em;z-index:3}
+
+/* ---------- statement ---------- */
+.statement{padding:clamp(100px,16vh,200px) var(--gutter);max-width:1240px;margin:0 auto}
+.statement p{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.3vw,68px);line-height:1.12;letter-spacing:-.015em}
+.statement .w{opacity:.14;transition:opacity .25s linear}
+.statement .w.on{opacity:1}
+.statement em{font-style:italic;color:var(--cobalt)}
+
+/* ---------- acts (pinned horizontal reel) ---------- */
+.acts{position:relative;height:420vh}
+.acts-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.reel-head{position:absolute;top:84px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:baseline;z-index:2}
+.reel-head h2{margin:0;font:800 clamp(20px,2vw,28px)/1 var(--display);font-variation-settings:"wdth" 70}
+.reel-progress{flex:0 0 min(40vw,420px);height:2px;background:var(--line);position:relative;border-radius:2px}
+.reel-progress b{position:absolute;inset:0;transform-origin:left;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--cobalt),var(--rose))}
+.track{display:flex;gap:4vw;padding:0 var(--gutter);will-change:transform;transform:translate3d(var(--tx,0px),0,0)}
+.act{flex:0 0 min(84vw,1120px);height:min(70vh,640px);position:relative;border-radius:28px;overflow:hidden;background:var(--bg-2);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);isolation:isolate}
+.act .ghost{position:absolute;z-index:-1;left:-2%;bottom:-6%;font:900 clamp(120px,22vw,340px)/.8 var(--display);font-variation-settings:"wdth" 50;color:transparent;-webkit-text-stroke:1.5px var(--line);white-space:nowrap;transform:translate3d(var(--gx,0px),0,0)}
+.act-num{padding:clamp(24px,3.5vw,48px);display:flex;flex-direction:column;justify-content:space-between}
+.act-num .roman{font:900 clamp(90px,13vw,200px)/.8 var(--display);font-variation-settings:"wdth" 55;letter-spacing:-.04em;background:linear-gradient(170deg,var(--cobalt),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.act-num h3{margin:0;font:800 clamp(34px,4vw,62px)/.95 var(--display);font-variation-settings:"wdth" 75;letter-spacing:-.02em}
+.act-num .when{font:500 15px var(--display);font-variation-settings:"wdth" 80;color:var(--ink-soft);margin-top:10px}
+.act-body{padding:clamp(24px,3.5vw,48px);padding-left:0;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.act-body p{margin:0;max-width:34em}
+.act-body .left-with{font-style:italic;font-size:1.08em;color:var(--ink);border-left:3px solid var(--rose);padding-left:18px}
+.act-body .tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font:500 13px/1 var(--display);font-variation-settings:"wdth" 85;padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft)}
+.act.intro{background:none;flex-basis:min(60vw,640px);display:flex;flex-direction:column;justify-content:center}
+.act.intro p{font-size:clamp(22px,2vw,30px);line-height:1.3;max-width:18em;margin:0}
+.act.intro p + p{margin-top:18px;font-size:16px;color:var(--ink-faint);font-family:var(--display);font-variation-settings:"wdth" 80}
+
+/* ---------- intermission ---------- */
+.intermission{position:relative;margin:0 var(--gutter);padding:clamp(56px,9vw,120px) clamp(24px,6vw,96px);border-radius:32px;background:var(--ink);color:var(--bg);overflow:hidden;isolation:isolate}
+.intermission::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  repeating-linear-gradient(90deg,transparent 0 46px,color-mix(in oklab,var(--bg) 6%,transparent) 46px 48px),
+  radial-gradient(70% 90% at 100% 0%,color-mix(in oklab,var(--cobalt) 45%,transparent),transparent 70%)}
+.intermission .lede{font:800 clamp(44px,7vw,110px)/.9 var(--display);font-variation-settings:"wdth" 62;letter-spacing:-.03em;margin:0 0 36px}
+.intermission .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 56px;max-width:1100px}
+.intermission p{margin:0;color:color-mix(in oklab,var(--bg) 82%,transparent)}
+.intermission p strong{color:var(--bg)}
+
+/* ---------- spec campaign ---------- */
+.spec{padding:clamp(110px,16vh,190px) var(--gutter) 40px;max-width:1400px;margin:0 auto}
+.spec-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 6vw;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.spec-head h2{margin:0;font:900 clamp(56px,9vw,150px)/.84 var(--display);font-variation-settings:"wdth" var(--w2,60);letter-spacing:-.04em}
+.spec-head h2 span{display:block;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.disclaim{font:500 14px/1.4 var(--display);font-variation-settings:"wdth" 85;color:var(--ink-faint);margin:0 0 14px}
+.insight{font-size:clamp(19px,1.5vw,23px);line-height:1.5;margin:0}
+.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px);counter-reset:shot}
+.shot{margin:0;position:relative}
+.frame{position:relative;aspect-ratio:2.39/1;border-radius:14px;overflow:hidden;background:#0F0C22;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .4s var(--ease);box-shadow:var(--shadow)}
+.frame svg{width:100%;height:100%;display:block}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#000 0 7%,transparent 7% 93%,#000 93%);opacity:.9;pointer-events:none}
+.frame .tcode{position:absolute;right:10px;bottom:calc(7% + 6px);font:500 11px var(--display);font-variant-numeric:tabular-nums;color:rgba(255,255,255,.75);z-index:2}
+.shot figcaption{padding:14px 2px 0}
+.shot .sn{font:700 14px var(--display);font-variation-settings:"wdth" 80;color:var(--rose)}
+.shot .desc{margin:4px 0 6px;font-size:16.5px;line-height:1.5}
+.shot .vo{margin:0;font-style:italic;color:var(--ink-soft);font-size:16px}
+.endline{margin:clamp(48px,7vw,90px) 0 0;text-align:center;font:900 clamp(40px,6.4vw,104px)/.92 var(--display);font-variation-settings:"wdth" 68;letter-spacing:-.03em}
+.endline small{display:block;font:italic 400 clamp(17px,1.4vw,21px)/1.4 var(--serif);letter-spacing:0;color:var(--ink-soft);margin-top:16px}
+
+.kit{margin-top:clamp(70px,10vw,130px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+.piece{border-radius:24px;padding:clamp(22px,2.6vw,36px);background:var(--bg-2);position:relative;overflow:hidden}
+.piece h3{margin:0 0 10px;font:800 clamp(24px,2.3vw,34px)/1 var(--display);font-variation-settings:"wdth" 72;letter-spacing:-.015em}
+.piece p{margin:0;color:var(--ink-soft)}
+.p-social{grid-column:span 5;display:flex;flex-direction:column;gap:20px}
+.p-life{grid-column:span 7;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:center}
+.p-deck{grid-column:span 12;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:center;background:linear-gradient(120deg,var(--cobalt),var(--rose));color:#fff}
+.p-deck p{color:rgba(255,255,255,.88)}
+/* 15 frames, 15 hours */
+.flip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.flip span{aspect-ratio:9/16;border-radius:6px;background:var(--bg-3);position:relative;overflow:hidden}
+.flip span::before{content:"";position:absolute;left:14%;right:14%;top:14%;height:calc(var(--f)*5% + 4%);background:repeating-linear-gradient(180deg,var(--ink-faint) 0 1.5px,transparent 1.5px 6px);opacity:.75}
+.flip span:last-child{background:linear-gradient(160deg,var(--cobalt),var(--rose))}
+.flip span:last-child::before{display:none}
+.flip span:last-child::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:800 22px var(--display)}
+.flip span.hot{outline:2px solid var(--rose);outline-offset:1px}
+/* inbox */
+.inbox{background:var(--bg);border-radius:20px;padding:10px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.mail{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px;border-radius:12px;align-items:start}
+.mail + .mail{border-top:1px solid var(--line);border-radius:0}
+.mail .dot{width:9px;height:9px;border-radius:50%;background:var(--cobalt);margin-top:7px;grid-row:span 2}
+.mail b{font:700 14.5px/1.3 var(--display);font-variation-settings:"wdth" 85}
+.mail small{font-size:14px;color:var(--ink-faint);line-height:1.35}
+/* slide */
+.slide{aspect-ratio:16/9;border-radius:14px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.3);padding:clamp(16px,2.4vw,30px);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:12px 22px;font-family:var(--display)}
+.slide .t{grid-column:1/-1;font-weight:800;font-variation-settings:"wdth" 70;font-size:clamp(20px,2.4vw,34px);line-height:1}
+.slide dl{margin:0;display:grid;gap:10px;align-content:start}
+.slide dt{font-weight:700;font-size:13px;opacity:.8;font-variation-settings:"wdth" 85}
+.slide dd{margin:0;font-family:var(--serif);font-size:clamp(14px,1.1vw,16px);line-height:1.35}
+
+/* ---------- brief, answered ---------- */
+.brief{padding:clamp(110px,16vh,190px) var(--gutter);max-width:1400px;margin:0 auto}
+.brief h2{margin:0 0 20px;font:900 clamp(48px,7vw,120px)/.86 var(--display);font-variation-settings:"wdth" 64;letter-spacing:-.035em}
+.honest{max-width:40em;font-size:clamp(19px,1.5vw,23px);line-height:1.5;margin:0 0 clamp(40px,6vw,70px);color:var(--ink-soft)}
+.honest strong{color:var(--ink)}
+.qa{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,70px);align-items:start}
+.asks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.asks button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 4px;border-bottom:1px solid var(--line);font:700 clamp(19px,1.7vw,26px)/1.1 var(--display);font-variation-settings:"wdth" var(--bw,90);color:var(--ink-faint);transition:color .25s,font-variation-settings .35s var(--ease),padding .35s var(--ease)}
+.asks button:hover{color:var(--ink-soft)}
+.asks button[aria-selected="true"]{color:var(--ink);--bw:130;padding-left:16px}
+.asks button:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+.asks button .ix{width:30px;height:30px;flex:0 0 30px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;transition:transform .35s var(--ease),background .25s}
+.asks button[aria-selected="true"] .ix{background:var(--rose);border-color:var(--rose);transform:rotate(90deg)}
+.asks button .ix::before{content:"";width:9px;height:9px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg) translate(-1px,1px)}
+.asks button[aria-selected="true"] .ix::before{border-color:#fff}
+.answer-stage{position:sticky;top:96px;min-height:360px;border-radius:28px;background:var(--bg-2);padding:clamp(26px,3.6vw,52px);overflow:hidden;isolation:isolate}
+.answer-stage::before{content:"";position:absolute;width:420px;height:420px;right:-140px;top:-160px;z-index:-1;border-radius:50%;background:radial-gradient(circle,color-mix(in oklab,var(--rose) 30%,transparent),transparent 70%)}
+.answer{display:none}
+.answer.on{display:block;animation:ans .5s var(--ease)}
+@keyframes ans{from{opacity:0;transform:translateY(14px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+.answer .their{font:500 15px/1.4 var(--display);font-variation-settings:"wdth" 85;color:var(--ink-faint);margin:0 0 18px}
+.answer .mine{font-size:clamp(22px,2.1vw,32px);line-height:1.3;margin:0 0 20px;letter-spacing:-.01em}
+.answer .proof{margin:0;color:var(--ink-soft)}
+
+/* ---------- credits ---------- */
+.credits{padding:clamp(110px,16vh,190px) var(--gutter) 60px;text-align:center;position:relative}
+.credits .roll{max-width:820px;margin:0 auto;display:grid;gap:22px}
+.credit{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:baseline}
+.credit dt{text-align:right;font:500 15px var(--display);font-variation-settings:"wdth" 85;color:var(--ink-faint)}
+.credit dd{margin:0;text-align:left;font:700 clamp(18px,1.6vw,24px)/1.25 var(--display);font-variation-settings:"wdth" 92}
+.credits .directed dd{font-size:clamp(30px,3.4vw,52px);font-weight:900;font-variation-settings:"wdth" 70;letter-spacing:-.02em}
+.contact{margin:clamp(90px,12vw,160px) auto 0;max-width:1200px}
+.contact .big{display:inline-block;text-decoration:none;font:900 clamp(40px,8.4vw,150px)/.9 var(--display);font-variation-settings:"wdth" var(--cw,60);letter-spacing:-.04em;transition:font-variation-settings .6s var(--ease);background:linear-gradient(100deg,var(--ink) 30%,var(--cobalt) 60%,var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.contact .big:hover{--cw:110}
+.contact .addr{display:block;margin-top:18px;font:500 clamp(16px,1.4vw,20px) var(--display);font-variation-settings:"wdth" 90;color:var(--ink-soft)}
+.contact .links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+.foot{padding:40px var(--gutter) 34px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font:500 13.5px/1.5 var(--display);font-variation-settings:"wdth" 85;color:var(--ink-faint);border-top:1px solid var(--line);margin-top:80px}
+
+/* reveal: one orchestrated hero load */
+.hero .name,.hero .portrait,.hero-copy{animation:rise 1.2s var(--ease) both}
+.hero .portrait{animation-delay:.25s}
+.hero-copy{animation-delay:.45s}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1}}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr;grid-template-rows:auto auto auto;padding-top:96px;align-items:start}
+  .name{grid-row:1;font-size:clamp(76px,25vw,200px)}
+  .name .l2{padding-left:10vw}
+  .portrait{grid-column:1;grid-row:2;justify-self:end;width:min(58vw,300px);margin-top:-18vw}
+  .hero-copy{grid-row:3}
+  .ticket{left:-28%}
+  .scrollcue{display:none}
+  .spec-head,.qa,.p-life,.p-deck{grid-template-columns:1fr}
+  .board{grid-template-columns:1fr 1fr}
+  .p-social,.p-life,.p-deck{grid-column:span 12}
+  .answer-stage{position:relative;top:0}
+}
+@media (max-width: 760px){
+  .acts{height:auto}
+  .acts-pin{position:relative;height:auto;overflow:visible;padding:40px 0}
+  .reel-head{position:static;padding:0 var(--gutter) 24px}
+  .reel-progress{display:none}
+  .track{flex-direction:column;transform:none!important;gap:18px}
+  .act,.act.intro{flex-basis:auto;height:auto;grid-template-columns:1fr}
+  .act.intro{padding:0 4px 10px}
+  .act-body{padding:0 24px 28px}
+  .act-num{gap:18px}
+  .board{grid-template-columns:1fr}
+  .credit{grid-template-columns:1fr;gap:4px}
+  .credit dt,.credit dd{text-align:center}
+  .tc{display:none}
+  .lights .lbl{display:none}
+  .lights{padding:6px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .acts{height:auto}
+  .acts-pin{position:relative;height:auto;overflow:visible;padding:40px 0}
+  .reel-head{position:static;padding:0 var(--gutter) 24px}
+  .track{flex-direction:column;transform:none!important}
+  .act,.act.intro{flex-basis:auto;height:auto}
+  .statement .w{opacity:1}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="mark" href="#top" aria-label="Adam Marks, back to top">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 54 L22 12 L36 54 M14 38 H30 M36 54 V12 L45 32 L54 12 V54" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+  </a>
+  <div class="bar-right">
+    <span class="tc" aria-hidden="true"><i></i><span id="tc">00:00:00:00</span></span>
+    <button class="lights" id="lights" type="button" aria-label="Switch light or dark mode">
+      <span class="knob" aria-hidden="true"></span><span class="lbl" id="lightsLbl">House lights down</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <h1 class="name" aria-label="Adam Marks">
+      <span class="base" aria-hidden="true"><span>Adam</span><span class="l2">Marks</span></span>
+      <span class="lit" aria-hidden="true"><span>Adam</span><span class="l2">Marks</span></span>
+    </h1>
+
+    <div class="portrait" id="portrait">
+      <div class="arch">
+        <img src="assets/headshot.jpg" alt="Portrait of Adam Marks" onerror="this.closest('.portrait').classList.add('nophoto')">
+        <div class="mono" aria-hidden="true">AM</div>
+      </div>
+      <div class="ticket">Now auditioning<small>Creative Director, MasterClass Certificates</small></div>
+    </div>
+
+    <div class="hero-copy">
+      <p><strong>Performer since age five. Recording artist and producer. Co-founder of a game studio.</strong> Twelve years building the teams behind the work, and a lifetime making the work itself.</p>
+      <div class="ctas">
+        <a class="btn solid" href="#spec"><span class="play" aria-hidden="true"></span>Watch the spec campaign</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <span class="scrollcue" aria-hidden="true">Scroll to roll film</span>
+  </section>
+
+  <!-- STATEMENT -->
+  <section class="statement" aria-label="Why me">
+    <p id="statement">Most creative directors learn the craft first and the people part later. I learned them side by side, in rehearsal rooms, on tour, in the studio, and then building a company out of an empty folder. <em>I can find the idea.</em> I can also get fifty people to ship it.</p>
+  </section>
+
+  <!-- ACTS -->
+  <section class="acts" id="acts" aria-labelledby="acts-h">
+    <div class="acts-pin">
+      <div class="reel-head">
+        <h2 id="acts-h">The story so far, in three acts</h2>
+        <div class="reel-progress" aria-hidden="true"><b id="reelbar"></b></div>
+      </div>
+      <div class="track" id="track">
+        <div class="act intro">
+          <p>Every act taught me a different half of this job. The stage taught me what makes people lean in. The classroom taught me what makes them stay. The studio taught me how to get it made.</p>
+          <p>Keep scrolling. The reel moves sideways.</p>
+        </div>
+
+        <article class="act">
+          <span class="ghost" aria-hidden="true">Stage</span>
+          <div class="act-num">
+            <span class="roman" aria-hidden="true">I</span>
+            <div><h3>The stage</h3><div class="when">Age five to the international circuit</div></div>
+          </div>
+          <div class="act-body">
+            <p>Trained in ballet to a professional level as a kid. Conservatory piano from age five. LaGuardia High School for acting. Berklee for music. After that I toured internationally as a musician, released records as an artist, and produced them for other people.</p>
+            <p class="left-with">What it left me with: taste, timing, and how to hold a room that doesn't owe me its attention.</p>
+            <div class="tags"><span class="tag">Ballet</span><span class="tag">Conservatory piano</span><span class="tag">LaGuardia acting</span><span class="tag">Berklee</span><span class="tag">Touring</span><span class="tag">Record production</span></div>
+          </div>
+        </article>
+
+        <article class="act">
+          <span class="ghost" aria-hidden="true">Classroom</span>
+          <div class="act-num">
+            <span class="roman" aria-hidden="true">II</span>
+            <div><h3>The classroom</h3><div class="when">Coinbase</div></div>
+          </div>
+          <div class="act-body">
+            <p>I joined Coinbase as customer support was being built, next to people who had done it for decades. The product changed every week, so I built the education around it: teaching crypto to employees who had never touched it, onboarding, career coaching. That internal teaching helped lead to Learn with Coinbase, the public education platform.</p>
+            <p class="left-with">What it left me with: how to make a hard subject feel like something you want to finish. That is the whole promise of a certificate.</p>
+            <div class="tags"><span class="tag">Learn with Coinbase</span><span class="tag">Curriculum</span><span class="tag">Onboarding</span><span class="tag">Coaching</span></div>
+          </div>
+        </article>
+
+        <article class="act">
+          <span class="ghost" aria-hidden="true">Studio</span>
+          <div class="act-num">
+            <span class="roman" aria-hidden="true">III</span>
+            <div><h3>The studio</h3><div class="when">Co-founder, stealth game studio</div></div>
+          </div>
+          <div class="act-body">
+            <p>I co-founded a game studio and grew it from nothing to about 30 people and 25 contractors. I found and closed every one of them myself: art, marketing, growth, community, engineering. Much of the team works for a share of what we build, so nobody follows a creative direction they don't believe in. I also run the money side: P&amp;L, fundraising, and the decks that go with it.</p>
+            <p class="left-with">What it left me with: leading people who don't report to me, and making the call on 80 percent of the information.</p>
+            <div class="tags"><span class="tag">Team of ~55</span><span class="tag">Art + marketing hires</span><span class="tag">Pitch decks</span><span class="tag">Fundraising</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERMISSION -->
+  <section class="intermission" aria-labelledby="int-h">
+    <h2 class="lede" id="int-h">Intermission: the day job</h2>
+    <div class="cols">
+      <p><strong>Twelve years in People Operations,</strong> at companies from 20 to 400 people. It looks like a detour. It's the reason my creative work actually ships.</p>
+      <p>I know how teams really move, where projects stall, and how to build the system so the next one moves faster. At a crisis communications firm I automated my own role <strong>two years in a row</strong> and spent the freed time on bigger problems.</p>
+      <p>A creative director spends half the week on the work and half on the people and process around it. <strong>I've already done the second half for a decade.</strong></p>
+    </div>
+  </section>
+
+  <!-- SPEC CAMPAIGN -->
+  <section class="spec" id="spec" aria-labelledby="spec-h">
+    <div class="spec-head">
+      <h2 id="spec-h">Prove it <span>in the room</span></h2>
+      <div>
+        <p class="disclaim">An unsolicited spec campaign for MasterClass Certificates. Not affiliated, made to show how I think.</p>
+        <p class="insight">A subscription sells access. A certificate sells a change other people can see. Every course ends in a capstone you can show an employer, so the story ends there too: in the room where the learner shows it.</p>
+      </div>
+    </div>
+
+    <div class="board" id="board">
+      <figure class="shot">
+        <div class="frame"><svg viewBox="0 0 239 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="g1" cx=".5" cy=".62" r=".45"><stop offset="0" stop-color="#9EAEFF" stop-opacity=".85"/><stop offset="1" stop-color="#0F0C22" stop-opacity="0"/></radialGradient></defs><rect width="239" height="100" fill="#0F0C22"/><rect width="239" height="100" fill="url(#g1)"/><path d="M78 74 L161 74 L150 52 L89 52 Z" fill="#1E1840" stroke="#B9C3FF" stroke-width=".8"/><rect x="92" y="54" width="55" height="17" rx="1" fill="#C8D0FF" opacity=".55"/><ellipse cx="96" cy="80" rx="15" ry="6" fill="#2A2450"/><ellipse cx="143" cy="80" rx="15" ry="6" fill="#2A2450"/><circle cx="200" cy="22" r="2" fill="#FF6FAE"/></svg><span class="tcode">00:00</span></div>
+        <figcaption><div class="sn">Shot 1</div><p class="desc">A kitchen table at 1 a.m. Tight on a learner's hands over a laptop. Nobody else is up.</p><p class="vo">VO, instructor: "Nobody is watching yet. Good."</p></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><svg viewBox="0 0 239 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g2" x1=".5" x2=".5" y1="0" y2="1"><stop offset="0" stop-color="#FFE7A8" stop-opacity=".9"/><stop offset="1" stop-color="#FFE7A8" stop-opacity="0"/></linearGradient></defs><rect width="239" height="100" fill="#120E26"/><path d="M104 0 L135 0 L175 100 L64 100 Z" fill="url(#g2)" opacity=".55"/><ellipse cx="96" cy="80" rx="15" ry="6" fill="#3A2F6E"/><ellipse cx="143" cy="80" rx="15" ry="6" fill="#3A2F6E"/><rect x="88" y="60" width="63" height="4" rx="2" fill="#FF6FAE" opacity=".8"/></svg><span class="tcode">00:06</span></div>
+        <figcaption><div class="sn">Shot 2</div><p class="desc">Match cut. Same hands, same gesture, but they're the instructor's, under a single work light in their own studio.</p><p class="vo">"This is where I started too."</p></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><svg viewBox="0 0 239 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="239" height="100" fill="#0F0C22"/><rect x="0" y="0" width="78" height="100" fill="#2F45E8" opacity=".55"/><rect x="80" y="0" width="79" height="100" fill="#1E1840"/><rect x="161" y="0" width="78" height="100" fill="#D42C74" opacity=".5"/><circle cx="39" cy="50" r="13" fill="#0F0C22" opacity=".6"/><rect x="96" y="34" width="47" height="8" rx="4" fill="#C8D0FF" opacity=".7"/><rect x="96" y="48" width="34" height="8" rx="4" fill="#FF6FAE" opacity=".8"/><rect x="96" y="62" width="40" height="8" rx="4" fill="#C8D0FF" opacity=".7"/><path d="M180 70 Q200 30 220 70" stroke="#fff" stroke-width="1.5" fill="none" opacity=".7"/></svg><span class="tcode">00:14</span></div>
+        <figcaption><div class="sn">Shot 3</div><p class="desc">Fast intercut: the lesson, the AI practice scenario pushing back, the learner trying again. Three takes, three tries.</p><p class="vo">"Again. Say it like you mean it."</p></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><svg viewBox="0 0 239 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="239" height="100" fill="#15112B"/><rect x="70" y="14" width="99" height="80" rx="2" fill="#ECE9F5" transform="rotate(-3 119 54)"/><g stroke="#8A83AE" stroke-width="1.6" stroke-linecap="round" transform="rotate(-3 119 54)"><path d="M82 30 H150"/><path d="M82 39 H144"/><path d="M82 48 H152"/><path d="M82 57 H132"/><path d="M82 66 H148"/></g><path d="M156 44 q10 -6 14 4 q-6 10 -16 4" stroke="#D42C74" stroke-width="1.8" fill="none" transform="rotate(-3 119 54)"/><path d="M158 64 l14 0" stroke="#D42C74" stroke-width="1.8" transform="rotate(-3 119 54)"/></svg><span class="tcode">00:28</span></div>
+        <figcaption><div class="sn">Shot 4</div><p class="desc">The capstone coming together. Overhead on pages full of the learner's own work, with the instructor's note in the margin.</p><p class="vo">"Now make it yours."</p></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><svg viewBox="0 0 239 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="g5" cx=".5" cy=".35" r=".5"><stop offset="0" stop-color="#FFF2D6" stop-opacity=".6"/><stop offset="1" stop-color="#0F0C22" stop-opacity="0"/></radialGradient></defs><rect width="239" height="100" fill="#1A1534"/><rect width="239" height="100" fill="url(#g5)"/><rect x="104" y="30" width="30" height="46" rx="10" fill="#2F45E8"/><circle cx="119" cy="22" r="8" fill="#2F45E8"/><g fill="#0B0918"><circle cx="58" cy="76" r="11"/><rect x="40" y="84" width="36" height="20" rx="8"/><circle cx="119" cy="84" r="11"/><rect x="101" y="92" width="36" height="20" rx="8"/><circle cx="180" cy="76" r="11"/><rect x="162" y="84" width="36" height="20" rx="8"/></g></svg><span class="tcode">00:41</span></div>
+        <figcaption><div class="sn">Shot 5</div><p class="desc">The room. A real panel. We never hear the learner's pitch. The sound drops out and we watch the panel lean in.</p><p class="vo">Silence. Then one panelist: "Walk me through that again."</p></figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><svg viewBox="0 0 239 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g6" x1="0" x2="1"><stop offset="0" stop-color="#2F45E8"/><stop offset="1" stop-color="#D42C74"/></linearGradient></defs><rect width="239" height="100" fill="#0F0C22"/><rect x="62" y="38" width="115" height="9" rx="2" fill="url(#g6)"/><rect x="82" y="53" width="75" height="5" rx="2" fill="#ECE9F5" opacity=".7"/><rect x="104" y="66" width="31" height="10" rx="5" fill="none" stroke="#ECE9F5" stroke-opacity=".6"/></svg><span class="tcode">00:55</span></div>
+        <figcaption><div class="sn">Shot 6</div><p class="desc">End card. The line, then the certificate landing as a share card, the way it will actually live on a profile.</p><p class="vo">Super: Learn it from the best. Prove it in the room.</p></figcaption>
+      </figure>
+    </div>
+
+    <p class="endline">Learn it from the best.<br>Prove it in the room.<small>The 60-second trailer, start to finish. Then the rest of the system.</small></p>
+
+    <div class="kit">
+      <div class="piece p-social">
+        <div>
+          <h3>15 hours in 15 seconds</h3>
+          <p>The vertical cutdown. One frame for every hour of the course: the learner's notebook filling up page by page, landing on the finished capstone. Built to loop, so the last frame becomes the reason to watch it again.</p>
+        </div>
+        <div class="flip" id="flip" aria-hidden="true"></div>
+      </div>
+
+      <div class="piece p-life">
+        <div>
+          <h3>Lifecycle that follows the capstone</h3>
+          <p>Emails timed to progress, not the calendar. Each one sounds like the instructor and pulls toward the moment the work gets seen. Hour six is where people quit, so hour six gets the best message.</p>
+        </div>
+        <div class="inbox" role="list" aria-label="Sample lifecycle email subject lines">
+          <div class="mail" role="listitem"><span class="dot"></span><b>Hour 1. You know something you didn't this morning.</b><small>Here's the one idea to hold on to from today.</small></div>
+          <div class="mail" role="listitem"><span class="dot"></span><b>Hour 6. The middle is where most people stop.</b><small>What your instructor did when they hit this point.</small></div>
+          <div class="mail" role="listitem"><span class="dot"></span><b>Capstone unlocked.</b><small>Make something you'd be proud to show a stranger.</small></div>
+          <div class="mail" role="listitem"><span class="dot"></span><b>Your certificate is ready to be seen.</b><small>Add it to your profile. Then go walk into the room.</small></div>
+        </div>
+      </div>
+
+      <div class="piece p-deck">
+        <div>
+          <h3>The one-slide pitch</h3>
+          <p>How I'd bring it to leadership: the whole idea on one page, with what we'd measure so it earns its next round. The decks are mine to build.</p>
+        </div>
+        <div class="slide" aria-label="Sample pitch slide">
+          <div class="t">Prove it in the room</div>
+          <dl><dt>Insight</dt><dd>People don't buy a course. They buy the moment someone else notices they've changed.</dd><dt>Line</dt><dd>Learn it from the best. Prove it in the room.</dd></dl>
+          <dl><dt>Executions</dt><dd>60s trailer, 15s loop, capstone lifecycle</dd><dt>We measure</dt><dd>Capstone completion, certificate shares, course-to-course carryover</dd></dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIEF, ANSWERED -->
+  <section class="brief" aria-labelledby="brief-h">
+    <h2 id="brief-h">Your brief, answered</h2>
+    <p class="honest"><strong>One honest line first.</strong> My title for the last twelve years said People Ops, not Creative Director. What I actually did was make things and build the teams that make them. Here's how that lines up with what you asked for.</p>
+
+    <div class="qa">
+      <ul class="asks" role="tablist" aria-label="Requirements from the job description" id="asks"></ul>
+      <div class="answer-stage" id="stage" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- CREDITS -->
+  <section class="credits" aria-labelledby="cred-h">
+    <h2 class="sr" id="cred-h">Credits</h2>
+    <dl class="roll">
+      <div class="credit directed"><dt>Directed by</dt><dd>Adam Marks</dd></div>
+      <div class="credit"><dt>Performance</dt><dd>Ballet, conservatory piano, LaGuardia acting</dd></div>
+      <div class="credit"><dt>Music</dt><dd>Touring musician, recording artist, producer</dd></div>
+      <div class="credit"><dt>Education</dt><dd>Coinbase, and the road to Learn with Coinbase</dd></div>
+      <div class="credit"><dt>Studio</dt><dd>Co-founder, stealth game studio</dd></div>
+      <div class="credit"><dt>People and operations</dt><dd>Twelve years, teams of 20 to 400</dd></div>
+      <div class="credit"><dt>Tools in the kit</dt><dd>AI-built pipelines, decks, scripts, this site</dd></div>
+      <div class="credit"><dt>Filmed on location</dt><dd>New York City, lifelong</dd></div>
+    </dl>
+
+    <div class="contact" id="contact">
+      <a class="big" href="mailto:adamtyrrellmarks@gmail.com?subject=Creative%20Director%2C%20MasterClass%20Certificates">Let's make<br>the next one.</a>
+      <span class="addr">adamtyrrellmarks@gmail.com</span>
+      <div class="links">
+        <a class="btn solid" href="mailto:adamtyrrellmarks@gmail.com?subject=Creative%20Director%2C%20MasterClass%20Certificates">Email Adam</a>
+        <a class="btn ghost" href="#top">Back to the top</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>The spec campaign is unsolicited and not affiliated with MasterClass.</span>
+  <span>Designed, written and built by Adam Marks, with AI as a collaborator.</span>
+</footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- theme: house lights ---------- */
+  const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  const sys = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const current = () => root.dataset.theme || sys();
+  const lbl = document.getElementById('lightsLbl');
+  const sync = () => { lbl.textContent = current() === 'dark' ? 'House lights up' : 'House lights down'; };
+  const saved = store.get('am-theme'); if (saved) root.dataset.theme = saved;
+  sync();
+  document.getElementById('lights').addEventListener('click', e => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    const apply = () => { root.dataset.theme = next; store.set('am-theme', next); sync(); };
+    if (!document.startViewTransition || reduce) return apply();
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = r.left + r.width/2, y = r.top + r.height/2;
+    const end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    document.startViewTransition(apply).ready.then(() => {
+      root.animate({clipPath:[`circle(0px at ${x}px ${y}px)`,`circle(${end}px at ${x}px ${y}px)`]},
+        {duration:750, easing:'cubic-bezier(.7,0,.2,1)', pseudoElement:'::view-transition-new(root)'});
+    });
+  });
+
+  /* ---------- hero spotlight ---------- */
+  const hero = document.getElementById('hero');
+  const name = hero.querySelector('.name');
+  let sx = .55, sy = .45, tx = sx, ty = sy, auto = true, t0 = performance.now();
+  const setSpot = () => {
+    const nb = name.getBoundingClientRect(), hb = hero.getBoundingClientRect();
+    const px = hb.left + sx * hb.width, py = hb.top + sy * hb.height;
+    name.style.setProperty('--sx', (px - nb.left) + 'px');
+    name.style.setProperty('--sy', (py - nb.top) + 'px');
+    hero.style.setProperty('--mx', (sx*100)+'%'); hero.style.setProperty('--my', (sy*100)+'%');
+  };
+  name.style.setProperty('--r', Math.max(220, Math.min(innerWidth*.28, 420)) + 'px');
+  hero.addEventListener('pointermove', e => {
+    if (e.pointerType === 'touch') return;
+    const hb = hero.getBoundingClientRect(); auto = false;
+    tx = (e.clientX - hb.left) / hb.width; ty = (e.clientY - hb.top) / hb.height;
+  });
+  hero.addEventListener('pointerleave', () => { auto = true; });
+
+  /* ---------- statement words ---------- */
+  const st = document.getElementById('statement');
+  const words = [];
+  const wrap = node => {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) frag.appendChild(document.createTextNode(part));
+          else { const s = document.createElement('span'); s.className = 'w'; s.textContent = part; words.push(s); frag.appendChild(s); }
+        });
+        n.replaceWith(frag);
+      } else wrap(n);
+    });
+  };
+  if (!reduce) wrap(st);
+
+  /* ---------- 15 frames ---------- */
+  const flip = document.getElementById('flip');
+  for (let i = 1; i <= 15; i++) { const s = document.createElement('span'); s.style.setProperty('--f', i); flip.appendChild(s); }
+  if (!reduce) { let k = 0; setInterval(() => { [...flip.children].forEach((c,i)=>c.classList.toggle('hot', i===k)); k = (k+1)%15; }, 380); }
+
+  /* ---------- brief tabs ---------- */
+  const QA = [
+    ['Lead without formal authority', 'Rallies teams around a creative direction without formal authority over them.',
+     'Most of my studio works for a share of the outcome, not a salary. Nobody has to follow me. They do because the direction is clear.',
+     'Same as producing records: session players and engineers who were never mine to manage, all pulled toward a sound only I could hear yet.'],
+    ['Turn strategy into a point of view', 'Translates strategy into a clear creative point of view.',
+     'Scroll up. "Prove it in the room" starts from one product truth, the capstone, and turns it into a line, a trailer and a lifecycle.',
+     'At Coinbase the strategy was "customers need to understand crypto." The point of view I built was: teach it so plainly that a new hire could teach it the next week.'],
+    ['Write it, cut it, build the deck', 'Writes scripts and copy, shapes a rough layout or edit, builds their own decks.',
+     'I write my own fundraising decks, contracts, policies and pitch material. I wrote, designed and built this site.',
+     'In the studio I produced and arranged, which is editing by ear: knowing what to cut so the part that matters can land.'],
+    ['Direct editors, designers, writers', 'Comfortable directing editors, designers and writers.',
+     'I hired and directed the studio\'s artists, marketers and community team, and I sourced every one of them myself.',
+     'Twelve years of building teams means I know how to brief a maker so the first draft is already close.'],
+    ['AI in the process, not a step', 'Fluent in using AI as part of your process, not as a separate step.',
+     'I build working tools with AI every day: an automated job pipeline that sources, scores and drafts, interactive demo sites, and this page.',
+     'AI drafts fast. I make the calls on taste, voice and what gets cut. That split is exactly how I\'d run it on a production team.'],
+    ['Present and hold the room', 'Pitches creative strategy to senior leadership and holds the room.',
+     'LaGuardia, international stages, investor pitches, and all-hands meetings where I had to deliver hard news well.',
+     'Executives are a tougher crowd than a festival. The skills are the same: know your first line, read the room, land the ending.'],
+    ['Decide on 80 percent', 'Confident making calls with 80% of the information.',
+     'When games industry layoffs suddenly freed up top talent, I built case-by-case contracts and closed great people in days, not quarters.',
+     'A startup never gives you 100 percent. I decide, watch what happens and adjust fast.'],
+    ['Raise the work, keep the people', 'Direct and discerning, raising the work without deflating the people making it.',
+     'A decade in People Ops is a decade of hard conversations done with care. I know how to say "not yet" so people come back with something better.',
+     'Trained under ballet and conservatory teachers. I know what high standards feel like from the receiving end, and which ones made me better.']
+  ];
+  const asks = document.getElementById('asks'), stage = document.getElementById('stage');
+  QA.forEach((q, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<button role="tab" id="t${i}" aria-controls="a${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}"><span>${q[0]}</span><span class="ix" aria-hidden="true"></span></button>`;
+    asks.appendChild(li);
+    const a = document.createElement('div');
+    a.className = 'answer' + (i===0?' on':''); a.id = 'a'+i; a.setAttribute('role','tabpanel'); a.setAttribute('aria-labelledby','t'+i);
+    a.innerHTML = `<p class="their">You asked for someone who ${q[1].charAt(0).toLowerCase()+q[1].slice(1)}</p><p class="mine">${q[2]}</p><p class="proof">${q[3]}</p>`;
+    stage.appendChild(a);
+  });
+  const tabs = [...asks.querySelectorAll('[role=tab]')];
+  const pick = i => { tabs.forEach((t,j)=>{t.setAttribute('aria-selected', j===i); t.tabIndex = j===i?0:-1;}); stage.querySelectorAll('.answer').forEach((a,j)=>a.classList.toggle('on', j===i)); };
+  tabs.forEach((t,i) => {
+    t.addEventListener('click', () => pick(i));
+    t.addEventListener('keydown', e => {
+      const k = {ArrowDown:1, ArrowRight:1, ArrowUp:-1, ArrowLeft:-1}[e.key];
+      if (k) { e.preventDefault(); const n = (i + k + tabs.length) % tabs.length; pick(n); tabs[n].focus(); }
+    });
+  });
+
+  /* ---------- storyboard tilt ---------- */
+  if (!reduce && matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.frame').forEach(f => {
+      f.addEventListener('pointermove', e => { const r = f.getBoundingClientRect(); f.style.setProperty('--ry', ((e.clientX-r.left)/r.width-.5)*10+'deg'); f.style.setProperty('--rx', -((e.clientY-r.top)/r.height-.5)*8+'deg'); });
+      f.addEventListener('pointerleave', () => { f.style.setProperty('--rx','0deg'); f.style.setProperty('--ry','0deg'); });
+    });
+  }
+
+  /* ---------- scroll engine ---------- */
+  const portrait = document.getElementById('portrait');
+  const pimg = portrait.querySelector('img');
+  const acts = document.getElementById('acts'), track = document.getElementById('track'), bar = document.getElementById('reelbar');
+  const ghosts = [...document.querySelectorAll('.act .ghost')];
+  const specH = document.getElementById('spec-h');
+  const tc = document.getElementById('tc');
+  const clamp = (v,a,b) => Math.min(b, Math.max(a, v));
+  const pad = n => String(Math.floor(n)).padStart(2,'0');
+
+  function frame(now) {
+    const y = scrollY, vh = innerHeight;
+    // timecode: whole page = 2:00 runtime at 24fps
+    const max = Math.max(1, document.documentElement.scrollHeight - vh);
+    const secs = (y / max) * 120;
+    tc.textContent = `00:${pad(secs/60)}:${pad(secs%60)}:${pad((secs*24)%24)}`;
+
+    if (!reduce) {
+      // spotlight drift
+      if (auto) { const t = (now - t0) / 1000; tx = .5 + Math.sin(t*.45)*.32; ty = .42 + Math.sin(t*.7+1)*.2; }
+      sx += (tx - sx) * .08; sy += (ty - sy) * .08; setSpot();
+
+      // hero name squeezes as you scroll, portrait parallax
+      const hp = clamp(y / vh, 0, 1);
+      name.style.setProperty('--w', (140 - hp * 90).toFixed(1));
+      portrait.style.setProperty('--py', (y * -0.18).toFixed(1) + 'px');
+      pimg.style.setProperty('--ipy', (y * 0.08).toFixed(1) + 'px');
+
+      // statement words
+      if (words.length) {
+        const r = st.getBoundingClientRect();
+        const p = clamp((vh * .85 - r.top) / (r.height + vh * .35), 0, 1);
+        const n = Math.round(p * words.length);
+        for (let i = 0; i < words.length; i++) words[i].classList.toggle('on', i < n);
+      }
+
+      // horizontal reel
+      if (innerWidth > 760) {
+        const r = acts.getBoundingClientRect();
+        const total = acts.offsetHeight - vh;
+        const p = clamp(-r.top / total, 0, 1);
+        const dist = track.scrollWidth - innerWidth;
+        track.style.setProperty('--tx', (-p * dist).toFixed(1) + 'px');
+        bar.style.setProperty('--p', p.toFixed(3));
+        ghosts.forEach((g, i) => g.style.setProperty('--gx', ((p * 3 - i) * 120).toFixed(1) + 'px'));
+      }
+
+      // spec headline widens as it enters
+      const sr = specH.getBoundingClientRect();
+      const sp = clamp(1 - sr.top / vh, 0, 1);
+      specH.style.setProperty('--w2', (50 + sp * 60).toFixed(1));
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
