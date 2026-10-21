@@ -115,34 +115,27 @@ a{color:inherit}
 .scrollcue{position:absolute;right:var(--gutter);bottom:24px;font:500 13px var(--display);font-variation-settings:"wdth" 75;color:var(--ink-faint);writing-mode:vertical-rl;letter-spacing:.06em;z-index:3}
 
 /* ---------- statement ---------- */
-.statement{padding:clamp(100px,16vh,200px) var(--gutter);max-width:1240px;margin:0 auto}
+.statement{padding:clamp(100px,16vh,200px) var(--gutter) clamp(40px,6vh,80px);max-width:1240px;margin:0 auto}
 .statement p{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.3vw,68px);line-height:1.12;letter-spacing:-.015em}
 .statement .w{opacity:.14;transition:opacity .25s linear}
 .statement .w.on{opacity:1}
 .statement em{font-style:italic;color:var(--cobalt)}
 
 /* ---------- acts (pinned horizontal reel) ---------- */
-.acts{position:relative;height:420vh}
-.acts-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
-.reel-head{position:absolute;top:84px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:baseline;z-index:2}
-.reel-head h2{margin:0;font:800 clamp(20px,2vw,28px)/1 var(--display);font-variation-settings:"wdth" 90}
-.reel-progress{flex:0 0 min(40vw,420px);height:2px;background:var(--line);position:relative;border-radius:2px}
-.reel-progress b{position:absolute;inset:0;transform-origin:left;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--cobalt),var(--rose))}
-.track{display:flex;gap:4vw;padding:0 var(--gutter);will-change:transform;transform:translate3d(var(--tx,0px),0,0)}
-.act{flex:0 0 min(84vw,1120px);height:min(70vh,640px);position:relative;border-radius:28px;overflow:hidden;background:var(--bg-2);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);isolation:isolate}
-.act .ghost{position:absolute;z-index:-1;left:-2%;bottom:-6%;font:900 clamp(120px,22vw,340px)/.8 var(--display);font-variation-settings:"wdth" 50;color:color-mix(in oklab,var(--ink) 5%,transparent);white-space:nowrap;transform:translate3d(var(--gx,0px),0,0)}
-.act-num{padding:clamp(24px,3.5vw,48px);display:flex;flex-direction:column;justify-content:space-between}
-.act-num .roman{font:900 clamp(90px,13vw,200px)/.8 var(--display);font-variation-settings:"wdth" 55;letter-spacing:-.04em;background:linear-gradient(170deg,var(--cobalt),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
-.act-num h3{margin:0;font:800 clamp(34px,4vw,62px)/.98 var(--display);font-variation-settings:"wdth" 88;letter-spacing:-.01em}
-.act-num .when{font:500 15px var(--display);font-variation-settings:"wdth" 80;color:var(--ink-soft);margin-top:10px}
-.act-body{padding:clamp(24px,3.5vw,48px);padding-left:0;display:flex;flex-direction:column;justify-content:center;gap:18px}
-.act-body p{margin:0;max-width:34em}
-.act-body .left-with{font-style:italic;font-size:1.08em;color:var(--ink);border-left:3px solid var(--rose);padding-left:18px}
-.act-body .tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font:500 13px/1 var(--display);font-variation-settings:"wdth" 85;padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft)}
-.act.intro{background:none;flex-basis:min(60vw,640px);display:flex;flex-direction:column;justify-content:center}
-.act.intro p{font-size:clamp(22px,2vw,30px);line-height:1.3;max-width:18em;margin:0}
-.act.intro p + p{margin-top:18px;font-size:16px;color:var(--ink-faint);font-family:var(--display);font-variation-settings:"wdth" 80}
+.acts{position:relative;height:330vh}
+.acts-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4vh,44px);padding-top:64px}
+.reel-head{padding:0 var(--gutter);display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
+.reel-head h2{margin:0 0 12px;font:850 clamp(34px,3.8vw,60px)/1 var(--display);font-variation-settings:"wdth" 88;letter-spacing:-.012em}
+.reel-head p{margin:0;max-width:36em;color:var(--ink-soft)}
+.reel-progress{flex:0 0 min(26vw,300px);height:3px;margin-bottom:10px;background:var(--line);position:relative;border-radius:3px}
+.reel-progress b{position:absolute;inset:0;border-radius:3px;transform-origin:left;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--cobalt),var(--rose))}
+.track{display:flex;align-items:stretch;gap:clamp(20px,3vw,40px);padding:0 var(--gutter);will-change:transform;transform:translate3d(var(--tx,0px),0,0)}
+.act{flex:0 0 min(78vw,940px);border-radius:28px;background:var(--bg-2);display:grid;grid-template-columns:clamp(70px,8vw,128px) minmax(0,1fr);gap:0 clamp(20px,2.6vw,40px);align-items:start;padding:clamp(28px,3.6vw,56px)}
+.act .roman{font:900 clamp(72px,8.4vw,136px)/.8 var(--display);font-variation-settings:"wdth" 70;letter-spacing:-.02em;background:linear-gradient(170deg,var(--cobalt),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.act h3{margin:0;font:850 clamp(44px,5vw,84px)/.95 var(--display);font-variation-settings:"wdth" 88;letter-spacing:-.015em}
+.act .when{margin:10px 0 24px;font:600 clamp(15px,1.1vw,18px)/1.3 var(--display);font-variation-settings:"wdth" 90;color:var(--rose)}
+.act .story{margin:0 0 22px;max-width:36em;font-size:1.05em}
+.act .left-with{margin:0;max-width:30em;font-style:italic;font-size:clamp(20px,1.6vw,25px);line-height:1.35;color:var(--ink);border-left:3px solid var(--rose);padding-left:20px}
 
 /* ---------- intermission ---------- */
 .intermission{position:relative;margin:0 var(--gutter);padding:clamp(56px,9vw,120px) clamp(24px,6vw,96px);border-radius:32px;background:var(--ink);color:var(--bg);overflow:hidden;isolation:isolate}
@@ -179,7 +172,7 @@ a{color:inherit}
 .piece h3{margin:0 0 10px;font:800 clamp(24px,2.3vw,34px)/1.05 var(--display);font-variation-settings:"wdth" 88;letter-spacing:-.005em}
 .piece p{margin:0;color:var(--ink-soft)}
 .p-social{grid-column:span 5;display:flex;flex-direction:column;gap:20px}
-.p-life{grid-column:span 7;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:center}
+.p-life{grid-column:span 7;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;align-items:start}
 .p-deck{grid-column:span 12;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:center;background:linear-gradient(120deg,var(--cobalt),var(--rose));color:#fff}
 .p-deck p{color:rgba(255,255,255,.88)}
 /* 15 frames, 15 hours */
@@ -264,14 +257,11 @@ a{color:inherit}
 }
 @media (max-width: 760px){
   .acts{height:auto}
-  .acts-pin{position:relative;height:auto;overflow:visible;padding:40px 0}
-  .reel-head{position:static;padding:0 var(--gutter) 24px}
+  .acts-pin{position:relative;height:auto;overflow:visible;padding:40px 0;gap:24px}
   .reel-progress{display:none}
-  .track{flex-direction:column;transform:none!important;gap:18px}
-  .act,.act.intro{flex-basis:auto;height:auto;grid-template-columns:1fr}
-  .act.intro{padding:0 4px 10px}
-  .act-body{padding:0 24px 28px}
-  .act-num{gap:18px}
+  .track{flex-direction:column;transform:none!important;gap:16px}
+  .act{flex-basis:auto;grid-template-columns:1fr;padding:28px 22px}
+  .act .roman{font-size:64px;margin-bottom:14px}
   .board{grid-template-columns:1fr}
   .credit{grid-template-columns:1fr;gap:4px}
   .credit dt,.credit dd{text-align:center}
@@ -283,9 +273,8 @@ a{color:inherit}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .acts{height:auto}
   .acts-pin{position:relative;height:auto;overflow:visible;padding:40px 0}
-  .reel-head{position:static;padding:0 var(--gutter) 24px}
   .track{flex-direction:column;transform:none!important}
-  .act,.act.intro{flex-basis:auto;height:auto}
+  .act{flex-basis:auto}
   .statement .w{opacity:1}
 }
 </style>
@@ -328,7 +317,6 @@ a{color:inherit}
         <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
     </div>
-    <span class="scrollcue" aria-hidden="true">Scroll to roll film</span>
   </section>
 
   <!-- STATEMENT -->
@@ -340,51 +328,40 @@ a{color:inherit}
   <section class="acts" id="acts" aria-labelledby="acts-h">
     <div class="acts-pin">
       <div class="reel-head">
-        <h2 id="acts-h">The story so far, in three acts</h2>
+        <div>
+          <h2 id="acts-h">The story so far, in three acts</h2>
+          <p>The stage taught me what makes people lean in. The classroom taught me what makes them stay. The studio taught me how to get it made.</p>
+        </div>
         <div class="reel-progress" aria-hidden="true"><b id="reelbar"></b></div>
       </div>
       <div class="track" id="track">
-        <div class="act intro">
-          <p>Every act taught me a different half of this job. The stage taught me what makes people lean in. The classroom taught me what makes them stay. The studio taught me how to get it made.</p>
-          <p>Keep scrolling. The reel moves sideways.</p>
-        </div>
-
         <article class="act">
-          <span class="ghost" aria-hidden="true">Stage</span>
-          <div class="act-num">
-            <span class="roman" aria-hidden="true">I</span>
-            <div><h3>The stage</h3><div class="when">Age five to the international circuit</div></div>
-          </div>
-          <div class="act-body">
-            <p>Trained in ballet to a professional level as a kid. Conservatory piano from age five. LaGuardia High School for acting. Berklee for music. After that I toured internationally as a musician, released records as an artist, and produced them for other people.</p>
-            <p class="left-with">What it left me with: taste, timing, and how to hold a room that doesn't owe me its attention.</p>
-            <div class="tags"><span class="tag">Ballet</span><span class="tag">Conservatory piano</span><span class="tag">LaGuardia acting</span><span class="tag">Berklee</span><span class="tag">Touring</span><span class="tag">Record production</span></div>
+          <span class="roman" aria-hidden="true">I</span>
+          <div>
+            <h3>The stage</h3>
+            <p class="when">Age five to the international circuit</p>
+            <p class="story">Trained in ballet to a professional level as a kid. Conservatory piano from age five. LaGuardia High School for acting. Berklee for music. After that I toured internationally as a musician, released records as an artist, and produced them for other people.</p>
+            <p class="left-with">It left me with taste, timing, and how to hold a room that doesn't owe me its attention.</p>
           </div>
         </article>
 
         <article class="act">
-          <span class="ghost" aria-hidden="true">Classroom</span>
-          <div class="act-num">
-            <span class="roman" aria-hidden="true">II</span>
-            <div><h3>The classroom</h3><div class="when">Coinbase</div></div>
-          </div>
-          <div class="act-body">
-            <p>I joined Coinbase as customer support was being built, next to people who had done it for decades. The product changed every week, so I built the education around it: teaching crypto to employees who had never touched it, onboarding, career coaching. That internal teaching helped lead to Learn with Coinbase, the public education platform.</p>
-            <p class="left-with">What it left me with: how to make a hard subject feel like something you want to finish. That is the whole promise of a certificate.</p>
-            <div class="tags"><span class="tag">Learn with Coinbase</span><span class="tag">Curriculum</span><span class="tag">Onboarding</span><span class="tag">Coaching</span></div>
+          <span class="roman" aria-hidden="true">II</span>
+          <div>
+            <h3>The classroom</h3>
+            <p class="when">Coinbase</p>
+            <p class="story">I joined Coinbase as customer support was being built, next to people who had done it for decades. The product changed every week, so I built the education around it: teaching crypto to employees who had never touched it, onboarding, career coaching. That internal teaching helped lead to Learn with Coinbase, the public education platform.</p>
+            <p class="left-with">It left me with how to make a hard subject feel like something you want to finish. That is the whole promise of a certificate.</p>
           </div>
         </article>
 
         <article class="act">
-          <span class="ghost" aria-hidden="true">Studio</span>
-          <div class="act-num">
-            <span class="roman" aria-hidden="true">III</span>
-            <div><h3>The studio</h3><div class="when">Co-founder, stealth game studio</div></div>
-          </div>
-          <div class="act-body">
-            <p>I co-founded a game studio and grew it from nothing to about 30 people and 25 contractors. I found and closed every one of them myself: art, marketing, growth, community, engineering. Much of the team works for a share of what we build, so nobody follows a creative direction they don't believe in. I also run the money side: P&amp;L, fundraising, and the decks that go with it.</p>
-            <p class="left-with">What it left me with: leading people who don't report to me, and making the call on 80 percent of the information.</p>
-            <div class="tags"><span class="tag">Team of ~55</span><span class="tag">Art + marketing hires</span><span class="tag">Pitch decks</span><span class="tag">Fundraising</span></div>
+          <span class="roman" aria-hidden="true">III</span>
+          <div>
+            <h3>The studio</h3>
+            <p class="when">Co-founder, stealth game studio</p>
+            <p class="story">I co-founded a game studio and grew it from nothing to about 30 people and 25 contractors. I found and closed every one of them myself: art, marketing, growth, community, engineering. Much of the team works for a share of what we build, so nobody follows a creative direction they don't believe in. I also run the money side: P&amp;L, fundraising, and the decks that go with it.</p>
+            <p class="left-with">It left me with how to lead people who don't report to me, and how to make the call on 80 percent of the information.</p>
           </div>
         </article>
       </div>
@@ -658,8 +635,6 @@ a{color:inherit}
   const portrait = document.getElementById('portrait');
   const pimg = portrait.querySelector('img');
   const acts = document.getElementById('acts'), track = document.getElementById('track'), bar = document.getElementById('reelbar');
-  const ghosts = [...document.querySelectorAll('.act .ghost')];
-  const specH = document.getElementById('spec-h');
   const tc = document.getElementById('tc');
   const clamp = (v,a,b) => Math.min(b, Math.max(a, v));
   const pad = n => String(Math.floor(n)).padStart(2,'0');
@@ -677,8 +652,6 @@ a{color:inherit}
       sx += (tx - sx) * .08; sy += (ty - sy) * .08; setSpot();
 
       // hero name squeezes as you scroll, portrait parallax
-      const hp = clamp(y / vh, 0, 1);
-      name.style.setProperty('--w', (140 - hp * 90).toFixed(1));
       portrait.style.setProperty('--py', (y * -0.18).toFixed(1) + 'px');
       pimg.style.setProperty('--ipy', (y * 0.08).toFixed(1) + 'px');
 
@@ -698,13 +671,8 @@ a{color:inherit}
         const dist = track.scrollWidth - innerWidth;
         track.style.setProperty('--tx', (-p * dist).toFixed(1) + 'px');
         bar.style.setProperty('--p', p.toFixed(3));
-        ghosts.forEach((g, i) => g.style.setProperty('--gx', ((p * 3 - i) * 120).toFixed(1) + 'px'));
       }
 
-      // spec headline widens as it enters
-      const sr = specH.getBoundingClientRect();
-      const sp = clamp(1 - sr.top / vh, 0, 1);
-      specH.style.setProperty('--w2', (70 + sp * 45).toFixed(1));
     }
     requestAnimationFrame(frame);
   }
