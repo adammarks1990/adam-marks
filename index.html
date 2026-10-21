@@ -741,24 +741,28 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
   if (!reduce) {
     const body = [document.querySelector('main'), document.querySelector('.foot')];
     let lastY = scrollY, lastT = performance.now(), vel = 0, wasBottom = false, busy = false;
+    // damped spring: one slow swell, a soft settle, and it always comes to rest at zero
+    const DUR = 1900;
     const bounce = amt => {
       if (busy) return; busy = true;
-      body.forEach(el => el.animate([
-        {transform:'translateY(0)'}, {transform:`translateY(${-amt}px)`},
-        {transform:`translateY(${amt*.3}px)`}, {transform:`translateY(${-amt*.1}px)`}, {transform:'translateY(0)'}
-      ], {duration:950, easing:'cubic-bezier(.25,.8,.25,1)'}));
-      setTimeout(() => { busy = false; }, 950);
+      const frames = [], N = 72, w = 2 * Math.PI * 1.15, z = 2.2;
+      for (let i = 0; i <= N; i++) {
+        const t = i / N, y = -amt * Math.exp(-z * t) * Math.sin(w * t) * Math.pow(1 - t, 1.5) / 0.5;
+        frames.push({transform:`translate3d(0,${y.toFixed(2)}px,0)`});
+      }
+      body.forEach(el => el.animate(frames, {duration:DUR, easing:'linear'}));
+      setTimeout(() => { busy = false; }, DUR);
     };
     addEventListener('scroll', () => {
       const now = performance.now(), y = scrollY;
       vel = (y - lastY) / Math.max(1, now - lastT); lastY = y; lastT = now;
       const atBottom = y >= document.documentElement.scrollHeight - innerHeight - 2;
-      if (atBottom && !wasBottom && vel > 1.5) bounce(clamp(vel * 18, 28, 80));
+      if (atBottom && !wasBottom && vel > 1.5) bounce(clamp(vel * 10, 18, 46));
       wasBottom = atBottom;
     }, {passive:true});
     addEventListener('wheel', e => {
       const atBottom = scrollY >= document.documentElement.scrollHeight - innerHeight - 2;
-      if (atBottom && e.deltaY > 30) bounce(clamp(e.deltaY * .25, 18, 50));
+      if (atBottom && e.deltaY > 30) bounce(clamp(e.deltaY * .12, 10, 26));
     }, {passive:true});
   }
 })();
