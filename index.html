@@ -156,10 +156,10 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
 /* ---------- intermission ---------- */
 .intermission{position:relative;margin:0 var(--gutter);padding:clamp(56px,9vw,120px) clamp(24px,6vw,96px);border-radius:32px;background:var(--ink);color:var(--bg);overflow:hidden;isolation:isolate}
 .intermission::before{content:"";position:absolute;inset:0;z-index:-1;background:
-  repeating-linear-gradient(90deg,transparent 0 46px,color-mix(in oklab,var(--bg) 6%,transparent) 46px 48px),
+  linear-gradient(90deg,transparent calc(50% - 1px),color-mix(in oklab,var(--bg) 6%,transparent) calc(50% - 1px) calc(50% + 1px),transparent calc(50% + 1px)) center top / 48px 100% repeat-x,
   radial-gradient(70% 90% at 100% 0%,color-mix(in oklab,var(--cobalt) 45%,transparent),transparent 70%)}
 .intermission .lede{font:800 clamp(44px,7vw,110px)/.95 var(--display);font-variation-settings:"wdth" 82;letter-spacing:-.012em;margin:0 0 36px}
-.int-inner{width:fit-content;max-width:100%}
+.int-inner{width:fit-content;max-width:100%;margin:0 auto}
 .intermission .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px clamp(28px,3.4vw,56px);width:0;min-width:100%}
 @media (max-width: 900px){.intermission .cols{grid-template-columns:1fr}}
 .intermission p{margin:0;color:color-mix(in oklab,var(--bg) 82%,transparent)}
