@@ -790,12 +790,18 @@ window.clarity && window.clarity('set', 'version', V ? VKEY : 'general');
     const DUR = 1650;
     const bounce = amt => {
       if (busy) return; busy = true;
-      const frames = [], N = 80, w = 2 * Math.PI * 1.2, z = 1.4;
+      const frames = [], wide = [], N = 80, w = 2 * Math.PI * 1.2, z = 1.4;
+      const big = document.querySelector('.contact .big');
+      const base = parseFloat(getComputedStyle(big).getPropertyValue('--cw')) || 80;
       for (let i = 0; i <= N; i++) {
         const t = i / N, y = -amt * Math.exp(-z * t) * Math.sin(w * t) * (1 - t) / 0.628;
         frames.push({transform:`translate3d(0,${y.toFixed(2)}px,0)`});
+        // the closing line stretches as the page lifts and narrows on the recoil, frame for frame
+        wide.push({fontVariationSettings:`"wdth" ${clamp(base - y * (innerWidth < 760 ? 0.15 : 0.3), 50, 150).toFixed(2)}`});
       }
-      body.forEach(el => el.animate(frames, {duration:DUR, easing:'linear'}));
+      const opts = {duration:DUR, easing:'linear'};
+      body.forEach(el => el.animate(frames, opts));
+      big.animate(wide, opts);
       setTimeout(() => { busy = false; }, DUR);
     };
     addEventListener('scroll', () => {
