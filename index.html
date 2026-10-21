@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Adam Marks</title>
-<meta name="description" content="Adam Marks: performer, producer, studio co-founder. A portfolio for the Creative Director role, MasterClass Certificates.">
+<meta name="description" content="Adam Marks: performer, producer, studio co-founder, and twelve years building the teams behind the work.">
 <meta property="og:title" content="Adam Marks">
 <meta property="og:description" content="Performer since five. Producer. Studio co-founder. Twelve years building the teams behind the work.">
 <meta name="color-scheme" content="light dark">
@@ -333,10 +333,10 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
     <div class="callcard" id="callcard">
       <div class="ticket">
         <div class="ticket-main">
-          <p class="kick">Now auditioning</p>
-          <p class="role">Creative Director</p>
-          <p class="co">MasterClass Certificates</p>
-          <p class="fine">Spec campaign and full brief inside</p>
+          <p class="kick" data-v="kick">Now booking</p>
+          <p class="role" data-v="role">The next big role</p>
+          <p class="co" data-v="co">Creative, people and operations</p>
+          <p class="fine" data-v="fine">Three acts, a spec campaign and a résumé inside</p>
         </div>
         <div class="ticket-stub" aria-hidden="true"><span>Admit one</span></div>
       </div>
@@ -345,7 +345,7 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
     <div class="hero-copy">
       <p><strong>Performer since age five. Recording artist and producer. Co-founder of a game studio.</strong> Twelve years building the teams behind the work, and a lifetime making the work itself.</p>
       <div class="ctas">
-        <a class="btn solid" href="#spec"><span class="play" aria-hidden="true"></span>Watch the spec campaign</a>
+        <a class="btn solid" href="#spec"><span class="play" aria-hidden="true"></span><span data-v="cta">See the spec campaign</span></a>
         <a class="btn ghost" href="#contact">Get in touch</a>
       </div>
     </div>
@@ -353,7 +353,7 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
 
   <!-- STATEMENT -->
   <section class="statement" aria-label="Why me">
-    <p id="statement">Most creative directors learn the craft first and the people part later. I learned them side by side, in rehearsal rooms, on tour, in the studio, and then building a company out of an empty folder. <em>I can find the idea.</em> I can also get fifty people to ship it.</p>
+    <p id="statement" data-v="statement">Most people pick a side: the work, or the people who make it. I learned both at once, in rehearsal rooms, on tour, in the studio, and then building a company out of an empty folder. <em>I can find the idea.</em> I can also get fifty people to ship it.</p>
   </section>
 
   <!-- ACTS -->
@@ -383,7 +383,7 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
             <h3>The classroom</h3>
             <p class="when">Coinbase</p>
             <p class="story">I joined Coinbase as customer support was being built, next to people who had done it for decades. The product changed every week, so I built the education around it: teaching crypto to employees who had never touched it, onboarding, career coaching. That internal teaching helped lead to Learn with Coinbase, the public education platform.</p>
-            <p class="left-with">How to make a hard subject feel like something you want to finish. That is the whole promise of a certificate.</p>
+            <p class="left-with" data-v="classroomTake">How to make a hard subject feel like something you want to finish.</p>
           </div>
         </article>
 
@@ -407,7 +407,7 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
     <div class="cols">
       <p><strong>Twelve years in People Operations,</strong> at companies from 20 to 400 people. It looks like a detour. It's the reason my creative work actually ships.</p>
       <p>I know how teams really move, where projects stall, and how to build the system so the next one moves faster. At a crisis communications firm I automated my own role <strong>two years in a row</strong> and spent the freed time on bigger problems.</p>
-      <p>A creative director spends half the week on the work and half on the people and process around it. <strong>I've already done the second half for a decade.</strong></p>
+      <p data-v="int3">Every great piece of work has a half nobody sees: the people, the process and the systems that let it ship. <strong>I've run that half for a decade.</strong></p>
     </div>
     </div>
   </section>
@@ -489,8 +489,8 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
 
   <!-- BRIEF, ANSWERED -->
   <section class="brief" id="brief" aria-labelledby="brief-h">
-    <h2 id="brief-h">Your brief, answered</h2>
-    <p class="honest"><strong>One honest line first.</strong> My title for the last twelve years said People Ops, not Creative Director. What I actually did was make things and build the teams that make them. Here's how that lines up with what you asked for.</p>
+    <h2 id="brief-h" data-v="briefTitle">What I bring</h2>
+    <p class="honest" data-v="briefIntro"><strong>The short version.</strong> Twelve years in People Ops and a lifetime making things. Here's how that shows up on a team.</p>
 
     <div class="qa">
       <ul class="asks" role="tablist" aria-label="Requirements from the job description" id="asks"></ul>
@@ -513,11 +513,12 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
     </dl>
 
     <div class="contact" id="contact">
-      <a class="big" href="mailto:adamtyrrellmarks@gmail.com?subject=Creative%20Director%2C%20MasterClass%20Certificates">Let's make<br>the next one.</a>
+      <a class="big" data-mail href="mailto:adamtyrrellmarks@gmail.com?subject=Let%27s%20talk">Let's make<br>the next one.</a>
       <span class="addr">adamtyrrellmarks@gmail.com</span>
       <div class="links">
-        <a class="btn solid" href="mailto:adamtyrrellmarks@gmail.com?subject=Creative%20Director%2C%20MasterClass%20Certificates">Email Adam</a>
-        <a class="btn ghost" href="#top">Back to the top</a>
+        <a class="btn solid" data-mail href="mailto:adamtyrrellmarks@gmail.com?subject=Let%27s%20talk">Email Adam</a>
+        <a class="btn ghost" href="Adam_Marks_Resume.pdf" download="Adam_Marks_Resume.pdf">Download résumé</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/adamtmarks/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -529,6 +530,43 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
 </footer>
 
 <script>
+/* ---------- versions ----------
+   The plain link is the general version. Add ?for=<key> to tailor it.
+   To add a new one, copy the masterclass block, give it a new key and change the lines. */
+const VERSIONS = {
+  masterclass: {
+    title: 'Adam Marks - Creative Director, MasterClass Certificates',
+    desc: 'Adam Marks: performer, producer, studio co-founder. A portfolio for the Creative Director role, MasterClass Certificates.',
+    ask: 'You asked for someone who',
+    subject: 'Creative Director, MasterClass Certificates',
+    text: {
+      kick: 'Now auditioning', role: 'Creative Director', co: 'MasterClass Certificates',
+      fine: 'Spec campaign and full brief inside', cta: 'Watch the spec campaign',
+      classroomTake: 'How to make a hard subject feel like something you want to finish. That is the whole promise of a certificate.',
+      briefTitle: 'Your brief, answered'
+    },
+    html: {
+      statement: 'Most creative directors learn the craft first and the people part later. I learned them side by side, in rehearsal rooms, on tour, in the studio, and then building a company out of an empty folder. <em>I can find the idea.</em> I can also get fifty people to ship it.',
+      int3: "A creative director spends half the week on the work and half on the people and process around it. <strong>I've already done the second half for a decade.</strong>",
+      briefIntro: "<strong>One honest line first.</strong> My title for the last twelve years said People Ops, not Creative Director. What I actually did was make things and build the teams that make them. Here's how that lines up with what you asked for."
+    }
+  }
+};
+const VKEY = (new URLSearchParams(location.search).get('for') || '').toLowerCase();
+const V = VERSIONS[VKEY];
+const ASK = V ? V.ask : 'Every team needs someone who';
+if (V) {
+  document.querySelectorAll('[data-v]').forEach(el => {
+    const k = el.dataset.v;
+    if (V.html && k in V.html) el.innerHTML = V.html[k];
+    else if (V.text && k in V.text) el.textContent = V.text[k];
+  });
+  if (V.title) document.title = V.title;
+  if (V.desc) document.querySelector('meta[name=description]').content = V.desc;
+  if (V.subject) document.querySelectorAll('[data-mail]').forEach(a => a.href = 'mailto:adamtyrrellmarks@gmail.com?subject=' + encodeURIComponent(V.subject));
+}
+window.clarity && window.clarity('set', 'version', V ? VKEY : 'general');
+
 (() => {
   const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -657,7 +695,7 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
     asks.appendChild(li);
     const a = document.createElement('div');
     a.className = 'answer' + (i===0?' on':''); a.id = 'a'+i; a.setAttribute('role','tabpanel'); a.setAttribute('aria-labelledby','t'+i);
-    a.innerHTML = `<p class="their">You asked for someone who ${q[1].charAt(0).toLowerCase()+q[1].slice(1)}</p><p class="mine">${q[2]}</p><p class="proof">${q[3]}</p>`;
+    a.innerHTML = `<p class="their">${ASK} ${q[1].charAt(0).toLowerCase()+q[1].slice(1)}</p><p class="mine">${q[2]}</p><p class="proof">${q[3]}</p>`;
     stage.appendChild(a);
   });
   const tabs = [...asks.querySelectorAll('[role=tab]')];
