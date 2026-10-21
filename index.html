@@ -159,7 +159,9 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
   repeating-linear-gradient(90deg,transparent 0 46px,color-mix(in oklab,var(--bg) 6%,transparent) 46px 48px),
   radial-gradient(70% 90% at 100% 0%,color-mix(in oklab,var(--cobalt) 45%,transparent),transparent 70%)}
 .intermission .lede{font:800 clamp(44px,7vw,110px)/.95 var(--display);font-variation-settings:"wdth" 82;letter-spacing:-.012em;margin:0 0 36px}
-.intermission .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 56px;max-width:1100px}
+.int-inner{width:fit-content;max-width:100%}
+.intermission .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px clamp(28px,3.4vw,56px);width:0;min-width:100%}
+@media (max-width: 900px){.intermission .cols{grid-template-columns:1fr}}
 .intermission p{margin:0;color:color-mix(in oklab,var(--bg) 82%,transparent)}
 .intermission p strong{color:var(--bg)}
 
@@ -400,11 +402,13 @@ button.mark{appearance:none;color:var(--ink);cursor:pointer}
 
   <!-- INTERMISSION -->
   <section class="intermission" id="dayjob" aria-labelledby="int-h">
+    <div class="int-inner">
     <h2 class="lede" id="int-h">Intermission: the day job</h2>
     <div class="cols">
       <p><strong>Twelve years in People Operations,</strong> at companies from 20 to 400 people. It looks like a detour. It's the reason my creative work actually ships.</p>
       <p>I know how teams really move, where projects stall, and how to build the system so the next one moves faster. At a crisis communications firm I automated my own role <strong>two years in a row</strong> and spent the freed time on bigger problems.</p>
       <p>A creative director spends half the week on the work and half on the people and process around it. <strong>I've already done the second half for a decade.</strong></p>
+    </div>
     </div>
   </section>
 
